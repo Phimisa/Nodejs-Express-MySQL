@@ -1,0 +1,92 @@
+{{#section 'title'}}
+upload
+{{/section}}
+
+
+{{#section 'css'}}
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/
+bootstrap-fileinput/5.2.7/css/fileinput.min.css">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflar
+e.com/ajax/libs/bootstrap-fileinput/5.2.7/js/
+fileinput.min.js"  ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/
+libs/bootstrap-fileinput/5.2.7/themes/fa/theme.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/boo
+tstrap-fileinput/5.2.7/js/locales/vi.min.js"></script>
+
+
+
+<script>
+     $("#fuMain").fileinput({
+         theme:'fa',
+        showCaption: true,
+        dropZoneEnabled: true,
+        allowedFileExtensions:['png','jpg','gif'],
+        language:'vi'
+        });
+</script>
+{{/section}}
+{{!-- <div class="content">
+<form method="post" novalidate enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-header">
+            upload
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <input id="fuMain" type="file">
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-lg btn-success btn-block">
+                <i class="fa fa-check" aria-hidden="true">
+                    submit
+                </i>
+
+            </button>
+        </div>
+
+    </div>
+</form>
+
+</div>
+
+ --}}
+      <div class="content">
+        <div class="row">
+            
+          <div class="col-md-12">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Tải Tệp Tin</h5>
+              </div>
+              <div class="card-body">
+                <form action="" method="POST" novalidate enctype="multipart/form-data">
+
+                  <div class="row">
+                    <div class="col-md-12">
+                        <div class="file-loading">
+                            <input type="file" class="form-control" name="fuMain" id="fuMain" multiple>
+                     
+                        </div>
+                          
+                    </div>
+                  </div>
+ 
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                      <button type="submit" class="btn btn-primary btn-round">Tải lên</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

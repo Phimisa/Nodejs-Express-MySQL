@@ -1,0 +1,204 @@
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <h4 class="card-title">SẢN PHẨM</h4>
+                  <a class="btn btn-primary" href="/admin/products/add">THÊM LOẠI SẢN PHẨM </a>
+              </div>
+              <div class="card-body">
+                <div class="table">
+                  {{!-- table-responsive --}}
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Products ID
+                      </th>
+                      <th>
+                       Tên sản phẩm
+                      </th>
+                       <th>
+                        Giá
+                      </th>
+                       <th>
+                        cat id
+                      </th>
+                       <th>
+                        thông tin
+                      </th>
+                      
+                       <th>
+                       số lượng
+                      </th>
+                      <th class="text-right">
+                      
+                      </th>
+                    </thead>
+                      <form action="" method="post">
+                    <tbody>
+                      {{#each this.products}}
+                      <tr>
+                        <td>
+                         {{ProID}}
+                        </td>
+                        <td>
+                         {{ProName}}
+                        </td>
+                        <td>
+                         {{format_number Price}}
+                        </td>
+                         <td>
+                         {{CatName}}
+                        </td>
+                        <td>
+                         {{TinyDes}}
+                        </td>
+                        
+                        <td>
+                         {{Quantity}}
+                        </td>
+                        <td class="text-right">
+                           <a class="mr-3 btn btn-success" href="/admin/products/edit?id={{ProID}}" title="Chỉnh sửa"><i class="fas fa-edit "></i></a>
+                          <button type="submit" class=" btn btn-danger" formaction="/admin/products/del/{{ProID}}"><i class="far fa-trash-alt"></i></button>
+                        </td>       
+                      </tr>
+                      {{/each}}
+                      
+                    </tbody>
+                    </form>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          {{!-- <div class="col-md-12">
+            <div class="card card-plain">
+              <div class="card-header">
+                <h4 class="card-title"> Table on Plain Background</h4>
+                <p class="card-category"> Here is a subtitle for this table</p>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                        Country
+                      </th>
+                      <th>
+                        City
+                      </th>
+                      <th class="text-right">
+                        Salary
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          Dakota Rice
+                        </td>
+                        <td>
+                          Niger
+                        </td>
+                        <td>
+                          Oud-Turnhout
+                        </td>
+                        <td class="text-right">
+                          $36,738
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Minerva Hooper
+                        </td>
+                        <td>
+                          Curaçao
+                        </td>
+                        <td>
+                          Sinaai-Waas
+                        </td>
+                        <td class="text-right">
+                          $23,789
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Sage Rodriguez
+                        </td>
+                        <td>
+                          Netherlands
+                        </td>
+                        <td>
+                          Baileux
+                        </td>
+                        <td class="text-right">
+                          $56,142
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Philip Chaney
+                        </td>
+                        <td>
+                          Korea, South
+                        </td>
+                        <td>
+                          Overland Park
+                        </td>
+                        <td class="text-right">
+                          $38,735
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Doris Greene
+                        </td>
+                        <td>
+                          Malawi
+                        </td>
+                        <td>
+                          Feldkirchen in Kärnten
+                        </td>
+                        <td class="text-right">
+                          $63,542
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Mason Porter
+                        </td>
+                        <td>
+                          Chile
+                        </td>
+                        <td>
+                          Gloucester
+                        </td>
+                        <td class="text-right">
+                          $78,615
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Jon Porter
+                        </td>
+                        <td>
+                          Portugal
+                        </td>
+                        <td>
+                          Gloucester
+                        </td>
+                        <td class="text-right">
+                          $98,615
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div> --}}
+        </div>
+      </div>

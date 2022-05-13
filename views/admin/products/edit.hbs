@@ -1,0 +1,133 @@
+     {{#section 'title'}}
+EDIT PRODUCTS
+{{/section}}
+{{#section 'css'}}
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/
+bootstrap-fileinput/5.2.7/css/fileinput.min.css">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflar
+e.com/ajax/libs/bootstrap-fileinput/5.2.7/js/
+fileinput.min.js"  ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/
+libs/bootstrap-fileinput/5.2.7/themes/fa/theme.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/boo
+tstrap-fileinput/5.2.7/js/locales/vi.min.js"></script>
+
+
+
+<script>
+     $("#phimisa").fileinput({
+         theme:'fa',
+        showCaption: true,
+        dropZoneEnabled: true,
+        allowedFileExtensions:['png','jpg','gif','jpeg'],
+        language:'vi'
+        });
+</script>
+{{/section}}
+
+
+
+
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Chỉnh sửa danh mục</h5>
+              </div>
+              <div class="card-body">
+                <form action="update" method="POST" enctype="multipart/form-data">
+
+
+                     <div class="row">
+
+                      <div class="col-md-2 p-3">
+                      <div class="form-group">
+                        <label>ID Products</label>
+                        <input type="text" class="form-control" id="txtProID" name="ProID" value="{{this.product.ProID}}"  readonly>
+                      </div>
+                    </div>
+
+                     <div class="col-md-2 p-3">
+                      <div class="form-group">
+                        <label>ID Categories</label>
+                       
+                        <input type="text" class="form-control" id="txtCatID" value="{{this.product.CatID}}"  readonly>
+                      </div>
+                    </div>
+
+                         <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Loại sản phẩm</label>
+                           <select class="form-control" id="selCatID" name="CatID">
+                                 {{#each this.categorie}}
+                                <option value="{{CatID}}" > {{CatID}} - {{CatName}} </option>
+                                 {{/each}}
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="txtProName" name="ProName" value="{{this.product.ProName}}"  autofocus>
+                      </div>
+                    </div>
+                      <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Giá</label>
+                        <input type="text" class="form-control" id="txtPrice"  name="Price" value="{{format_number this.product.Price}}"  autofocus>
+                      </div>
+                    </div>
+                 
+                      <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Số Lượng</label>
+                        <input type="text" class="form-control" id="txtQauntity" name="Quantity" value="{{this.product.Quantity}}"  autofocus>
+                      </div>
+                    </div>
+                  
+                      <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Mô tả ngắn</label>
+                        <input type="text" class="form-control" id="txtTinyDes" name="TinyDes" value="{{this.product.TinyDes}}" autofocus>
+                      </div>
+                    </div>
+
+                        <div class="col-md-12 p-3">
+                          <label for="floatingTextarea2">Mô tả đầy đủ</label>
+                  <textarea class="form-control" id="txtFullDes" name="FullDes" value="{{this.product.FullDes}}" id="floatingTextarea2" style="height: 100px"></textarea>
+                  
+                    </div>
+                
+                        <img src="../../public/imgs/{{this.product.imgs}}" alt="">
+                  <div class="col-md-12">
+                    <div class="file-loading" >                                          
+                      <input  type="file" class="form-control" name="file" id="phimisa" value="{{this.product.imgs}}" multiple>                      
+                    </div>                          
+                  </div>
+
+                  </div>
+            
+                
+                     
+                  
+
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <a href="/admin/products/list" class="btn btn-success btn-round">quay lại</i></a>
+                        <button type="submit" class="btn btn-primary btn-round" >Cập nhật</button>
+                    </div>
+                  </div> 
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

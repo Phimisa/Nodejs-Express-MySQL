@@ -1,0 +1,117 @@
+     {{#section 'title'}}
+ADD CATEGOREIS
+{{/section}}
+
+
+{{#section 'css'}}
+
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/
+bootstrap-fileinput/5.2.7/css/fileinput.min.css">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflar
+e.com/ajax/libs/bootstrap-fileinput/5.2.7/js/
+fileinput.min.js"  ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/
+libs/bootstrap-fileinput/5.2.7/themes/fa/theme.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/boo
+tstrap-fileinput/5.2.7/js/locales/vi.min.js"></script>
+
+
+
+<script>
+     $("#fuMain").fileinput({
+         theme:'fa',
+        showCaption: true,
+        dropZoneEnabled: true,
+        allowedFileExtensions:['png','jpg','gif','jpeg'],
+        language:'vi'
+        });
+</script>
+{{/section}}
+
+
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">THÊM SẢN PHẨM</h5>
+              </div>
+              <div class="card-body">
+                <form action="add" method="POST"  enctype="multipart/form-data" >
+
+
+                     <div class="row">
+                            <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Loại sản phẩm</label>
+                         <select class="form-control" id="selCatID" name="txtCatID">
+                                  {{#each this.products}}
+                                <option value="{{CatID}}" >{{CatName}}</option>
+                                {{/each}}
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="txtProName" name="txtProName" placeholder="..."  autofocus>
+                      </div>
+                    </div>
+                      <div class="col-md-4 p-3">
+                      <div class="form-group">
+                        <label>Giá</label>
+
+                        <input type="number" class="form-control" id="txtPrice"   name="txtPrice" placeholder="..." autofocus>
+
+                      </div>
+                    </div>
+              
+                      <div class="col-md-6 p-3">
+                      <div class="form-group">
+                        <label>Số Lượng</label>
+                        <input type="text" class="form-control" id="txtQuantity" name="txtQuantity" placeholder="..."  autofocus>
+                      </div>
+                    </div>
+                      <div class="col-md-6 p-3">
+                      <div class="form-group">
+                        <label>Mô tả ngắn</label>
+                        <input type="text" class="form-control" id="txtTinyDes" name="txtTinyDes" placeholder="..."  autofocus>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 p-3">
+                      <label for="floatingTextarea2">Mô tả đầy đủ</label>
+              <textarea class="form-control" id="txtFullDes" name="txtFullDes" placeholder="  mô tả nó ở đây" id="floatingTextarea2" style="height: 100px"></textarea>
+              
+                    </div>
+
+
+
+                
+                             <div class="col-md-12">
+                        <div class="file-loading" >                                          
+                            <input  type="file" class="form-control" name="file" id="fuMain" multiple>                      
+                        </div>                          
+                    </div>
+                  
+
+
+
+                  </div>
+            
+                
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-primary btn-round" >Thêm nó</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

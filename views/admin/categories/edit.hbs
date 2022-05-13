@@ -1,0 +1,43 @@
+     {{#section 'title'}}
+edit CATEGOREIS
+{{/section}}
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-user">
+              <div class="card-header">
+                <h5 class="card-title">Chỉnh sửa danh mục</h5>
+              </div>
+              <div class="card-body">
+                <form method="POST">
+
+
+                     <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>ID</label>
+                        <input type="text" class="form-control" id="txtCatID" name="CatID" readonly value="{{this.category.CatID}}">
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Danh Mục</label>
+                        <input type="text" class="form-control" id="txtCatName" name="CatName" placeholder="Home Address" value="{{this.category.CatName}}" autofocus>
+                      </div>
+                    </div>
+                  </div>
+
+ 
+                  <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <a href="/admin/categories/list" class="btn btn-success btn-round">quay lại</i></a>
+                       {{!-- <button type="submit" class="btn btn-danger btn-round" formaction="/admin/categories/del/{{CatID}}"><i class="far fa-trash-alt"></i></button> --}}
+                        <button type="submit" class="btn btn-primary btn-round" formaction="/admin/categories/update">Cập nhật</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
